@@ -13,9 +13,9 @@
     </commentGenerator>
     
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://10.27.59.196:3306/ssdsdb_public?useUnicode=true&amp;characterEncoding=utf8&amp;generateSimpleParameterMetadata=true"
-        userId="ssdsdb"
-        password="xunyuan123">
+        connectionURL="jdbc:mysql://localhost:3306/ssdsdb_public?useUnicode=true&amp;characterEncoding=utf8&amp;generateSimpleParameterMetadata=true"
+        userId="root"
+        password="root">
     </jdbcConnection>
 
     <javaTypeResolver >
