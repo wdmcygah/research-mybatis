@@ -3,16 +3,16 @@ package com.research.mybatis.spring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.research.mybatis.generator.dao.AgentInvokeGenerateMapper;
-import com.research.mybatis.generator.model.AgentInvokeGenerate;
+import com.research.mybatis.generator.dao.UserMapper;
+import com.research.mybatis.generator.model.User;
 
-@Repository
+//@Repository
 public class MybatisSpringDaoUseMapper {
 
     @Autowired
-    private AgentInvokeGenerateMapper mapper;
+    private UserMapper mapper;
     
-    public AgentInvokeGenerate getAgentInvokeById(String id){
+    public User getUserById(Integer id){
         return mapper.selectByPrimaryKey(id);
     }
 }

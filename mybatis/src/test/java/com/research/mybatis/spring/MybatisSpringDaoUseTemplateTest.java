@@ -6,7 +6,7 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.research.mybatis.generator.model.AgentInvokeGenerate;
+import com.research.mybatis.generator.model.User;
 
 @ContextConfiguration(locations="classpath:/generator/spring/spring-mybatis.xml")
 public class MybatisSpringDaoUseTemplateTest extends AbstractTestNGSpringContextTests{
@@ -16,8 +16,8 @@ public class MybatisSpringDaoUseTemplateTest extends AbstractTestNGSpringContext
     
   @Test
   public void getAgentInvokeById() {
-    String id = "001";
-    AgentInvokeGenerate ai = dao.getAgentInvokeById(id);
-    Assert.assertTrue("000".equals(ai.getDbFlag()));
+    int id = 1;
+    User ai = dao.getUserById(id);
+    Assert.assertTrue("000".equals(ai.getName()));
   }
 }

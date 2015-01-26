@@ -4,9 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="AgentInvokeGenerate" type="com.research.mybatis.generator.model.AgentInvokeGenerate"/>
+		<typeAlias type="com.research.mybatis.generator.model.User" alias="user"/>
+		<typeAlias type="com.research.mybatis.generator.model.Dept" alias="dept"/>
 	</typeAliases>
-	<mappers>
-		<mapper resource="generator/mapper/AgentInvokeGenerateMapper.xml"></mapper>
-	</mappers>
 </configuration>

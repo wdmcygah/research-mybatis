@@ -12,31 +12,32 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation"
 			value="classpath:generator/spring/spring-mybatis-config.xml"></property>
+		<property name="mapperLocations" value="classpath*:generator/mapper/*.xml" />
 	</bean>
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/ssdsdb_public?useUnicode=true&amp;characterEncoding=utf8&amp;generateSimpleParameterMetadata=true" />
+			value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
 	
 	<!-- 方式1、使用继承SqlSessionDaoSupport方式 -->
-	<bean id="mybatisSpringDaoUseDaoSupport"
+	<!-- <bean id="mybatisSpringDaoUseDaoSupport"
 		class="com.research.mybatis.spring.MybatisSpringDaoUseDaoSupport">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</bean>
+	</bean> -->
 
 	<!-- 方式2、使用sqlSession方式 -->
-	<bean id="mybatisSpringDaoUseTemplate" class="com.research.mybatis.spring.MybatisSpringDaoUseTemplate">
+	<!-- <bean id="mybatisSpringDaoUseTemplate" class="com.research.mybatis.spring.MybatisSpringDaoUseTemplate">
 		<property name="sqlSession" ref="sqlSession"></property>
-	</bean>
+	</bean> 
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
-	</bean>
+	</bean>-->
 
 	<!-- 方式3、使用扫描Mapper类的方式 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
